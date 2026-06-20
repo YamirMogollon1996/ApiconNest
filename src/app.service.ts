@@ -31,7 +31,7 @@ export class AppService {
 
   async BuscarUnPais(id: number): Promise<undefined | Pais> {
 
-    let pais = await Paises.find((item) => item.id === id)
+    let pais = await Paises.find((item) => item.id ===  id )
     if (pais) {
       return pais
     }

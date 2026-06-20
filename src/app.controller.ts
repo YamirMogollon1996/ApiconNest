@@ -12,22 +12,14 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/listatodos')
-  async ListaDatos() {  
-    console.log("asfsdf")
-    return this.appService.ListarTodosLosDatos()
-  }
-
 
   @Get('/buscar/:id')
   async buscarDato(@Param('id') id: number): Promise<Pais | undefined> { 
-
-
-    console.log("mogollon Oosrio")
-
+   
     try {
 
-      let PaisEncontrado = await this.appService.BuscarUnPais(id)
+      let PaisEncontrado = await this.appService.BuscarUnPais(Number(id))
+      console.log( PaisEncontrado)
       if (!PaisEncontrado) {
         return undefined
       }
@@ -37,6 +29,12 @@ export class AppController {
       console.log(error)
     }
   }
+  @Get('/listatodos')
+  async ListaDatos() {  
+    return this.appService.ListarTodosLosDatos()
+  }
+
+
 
 
 }
