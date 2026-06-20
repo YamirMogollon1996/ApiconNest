@@ -6,20 +6,15 @@ import { Pais } from "./app.service"
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) { }
-
   @Get()
   getHello(): string {
     return this.appService.getHello();
   }
-
-
   @Get('/buscar/:id')
-  async buscarDato(@Param('id') id: number): Promise<Pais | undefined> { 
-   
+  async buscarDato(@Param('id') id: number): Promise<Pais | undefined> {
     try {
-
       let PaisEncontrado = await this.appService.BuscarUnPais(Number(id))
-      console.log( PaisEncontrado)
+      console.log(PaisEncontrado)
       if (!PaisEncontrado) {
         return undefined
       }
@@ -30,7 +25,7 @@ export class AppController {
     }
   }
   @Get('/listatodos')
-  async ListaDatos() {  
+  async ListaDatos() {
     return this.appService.ListarTodosLosDatos()
   }
 
