@@ -11,13 +11,9 @@ export class AppController {
     return this.appService.getHello();
   }
 
-
   @Get('/listatodos')
   async ListaDatos ()  {
-
       return this.appService.ListarTodosLosDatos()
-
-
   }
 
   

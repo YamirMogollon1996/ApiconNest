@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-
-
 let Paises = [
   { "id": 1, "nombre": "Lima", "pais": "Perú" },
   { "id": 2, "nombre": "Bogotá", "pais": "Colombia" },
@@ -13,20 +11,13 @@ let Paises = [
   { "id": 9, "nombre": "Tokio", "pais": "Japón" },
   { "id": 10, "nombre": "Londres", "pais": "Reino Unido" }
 ]
-
-
-
 @Injectable()
 export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
-
-
   ListarTodosLosDatos() {
-
     return Paises
-
   }
 
 
